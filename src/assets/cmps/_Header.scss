@@ -1,0 +1,19 @@
+.nav-header {
+    width: 90vw;
+    margin: 0 auto;
+    border-radius: 5px;
+    .left-header {
+        padding: 5px;
+    }
+    a {
+        text-decoration: none;
+        padding: 7px 15px;
+        font-size: 1.2rem;
+        border: none;
+        cursor: pointer;
+        margin: 6px;
+        &.active {
+            border-bottom: 2px solid #f50057;
+        }
+    }
+}

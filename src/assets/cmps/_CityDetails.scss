@@ -1,0 +1,49 @@
+.city-details {
+    width: 60vw;
+    margin: 0 auto;
+    box-shadow: 0 0 0 black;
+    border-radius: 4px;
+    padding: 15px;
+    color: rgb(247, 245, 245);
+    .left-top {
+        text-align: start;
+        .map {
+            width: 100px;
+            height: 100px;
+            margin-inline-end: 25px;
+            background-color: rgb(245, 245, 245);
+        }
+        .name {
+            font-size: 26px;
+            margin-block-end: 0.3rem;
+        }
+        .celsius {
+            padding: 5px;
+            cursor: pointer;
+            width: 34px;
+        }
+    }
+    .right-top {
+        .btn-favorite {
+            margin-inline-end: 10px;
+            font-size: 1.9rem;
+            height: 20px;
+            cursor: pointer;
+            outline: none;
+        }
+    }
+    .day-title {
+        .img {
+            width: 8rem;
+            margin: -17px auto -15px auto;
+            height: 5rem;
+        }
+        .phrase {
+            text-align: center;
+            font-size: 32px;
+        }
+    }
+    .favorite {
+        color: yellow;
+    }
+}

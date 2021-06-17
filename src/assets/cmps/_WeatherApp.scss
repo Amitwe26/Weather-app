@@ -1,0 +1,45 @@
+.weather-app {
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 90vw;
+}
+.input-container {
+    text-align: center;
+    position: static;
+    margin-bottom: 20px;
+    .MuiInputBase-input {
+        margin: 10px;
+        width: 180px;
+        height: 15px;
+        padding: 3.5px 14px;
+    }
+    button {
+        border: none;
+        border-radius: 3px;
+        padding: 5px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+}
+.screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0);
+}
+.light {
+    color: rgb(255, 255, 255);
+    text-shadow: 0.6px 1px black;
+}
+.dark {
+    color: rgb(75, 75, 75);
+    text-shadow: 0.5px 0.8px rgb(255, 255, 255);
+}
+.bgcLight {
+    background-color: rgba(92, 92, 92, 0.25);
+}
+.bgcDark {
+    background-color: rgba(249, 249, 249, 0.6);
+}
