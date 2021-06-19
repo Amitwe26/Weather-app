@@ -14,9 +14,7 @@ export function SearchModal({ tenCitys, onSelectCity }) {
             <span className='city-option-txt'>
               {city.Country.LocalizedName}-
             </span>
-            <span className='country-option-txt'>
-              {city.AdministrativeArea.LocalizedName}
-            </span>
+            <span className='country-option-txt'>{city.LocalizedName}</span>
           </div>
         );
       })}

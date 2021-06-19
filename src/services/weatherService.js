@@ -15,17 +15,26 @@ export const weatherService = {
 };
 
 async function getCityKey(value) {
-  const city = storageService.loadFromStorage(value);
-  if (!city) {
+  const cityFromStorge = storageService.loadFromStorage(value);
+  if (!cityFromStorge) {
     const res = await axios.get(
       `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${WEATHER_KEY}&q=${value}`
     );
     const city = res.data[0];
     storageService.saveToStorage(res.data[0].EnglishName, city);
-    return city;
+    const key = city.Key;
+    const days = await queryDaysWeather(key);
+    const obj = createObj(city, days);
+    return obj;
+  } else {
+    const key = cityFromStorge.Key;
+    const days = await queryDaysWeather(key);
+    const obj = createObj(cityFromStorge, days);
+    return obj;
   }
-  const key = city.Key;
-  const days = await queryDaysWeather(key);
+}
+
+function createObj(city, days) {
   const obj = {
     name: city.EnglishName,
     country: city.Country.EnglishName,

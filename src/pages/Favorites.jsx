@@ -30,7 +30,7 @@ export function Favorites() {
     history.push('/');
   };
 
-  if (!favorites?.length && !list?.length)
+  if (!favorites?.length)
     return (
       <div
         className={`${

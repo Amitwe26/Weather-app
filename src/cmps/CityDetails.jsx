@@ -15,16 +15,8 @@ export function CityDetails() {
   const [img, setImg] = useState(null);
   const dispatch = useDispatch();
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(async () => {
-    if (!activeCity) {
-      try {
-        const userCity = await weatherService.getLocation();
-        dispatch(getCity(userCity));
-      } catch (err) {
-        dispatch(getCity());
-      }
-    }
+  useEffect(() => {
+    getLocationUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -35,12 +27,28 @@ export function CityDetails() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeCity]);
+  const getLocationUser = async () => {
+    if (!activeCity) {
+      try {
+        const userCity = await weatherService.getLocation();
+        dispatch(getCity(userCity));
+      } catch (err) {
+        dispatch(getCity());
+      }
+    }
+  };
 
   const getCelsius = () => {
-    if (activeCity) {
+    if (activeCity.days) {
       const temperature = activeCity?.days[0].Temperature.Maximum.Value;
       const c = (temperature - 32) / 1.8;
       return Number.parseFloat(c).toFixed();
+    }
+  };
+
+  const getPhrase = () => {
+    if (activeCity.day) {
+      return;
     }
   };
 
