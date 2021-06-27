@@ -46,12 +46,6 @@ export function CityDetails() {
     }
   };
 
-  const getPhrase = () => {
-    if (activeCity.day) {
-      return;
-    }
-  };
-
   const onSetFavorite = () => {
     if (!isFavorite) {
       setIsFavorite(true);

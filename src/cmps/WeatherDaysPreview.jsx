@@ -9,7 +9,7 @@ export function WeatherDaysPreview({ day }) {
 
     useEffect(() => {
         onSetImg()
-    }, [])
+    }, [day])
 
     function changetime() {
         const newDate = new Date(day.Date)
